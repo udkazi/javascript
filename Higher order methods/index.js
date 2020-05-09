@@ -1,3 +1,5 @@
+//https://jsfiddle.net/bradtraversy/e5rb0x0a/
+
 const companies = [
     {name: "Company One", category: "Finance", start: 1981, end: 2003},
     {name: "Company Two", category: "Retail", start: 1992, end: 2008},
@@ -70,6 +72,26 @@ const sortAges = ages.sort((a, b) => a - b);
 
 console.log(sortAges);
   
+// reduce
+
+let ageSum = 0;
+for(let i = 0; i < ages.length; i++) {
+  ageSum += ages[i];
+}
+
+const ageSum = ages.reduce(function(total, age) {
+  return total + age;
+}, 0);
+
+const ageSum = ages.reduce((total, age) => total + age, 0);
+
+// Get total years for all companies
+
+const totalYears = companies.reduce(function(total, company) {
+  return total + (company.end - company.start);
+}, 0);
+
+const totalYears = companies.reduce((total, company) => total + (company.end - company.start), 0);
 
 
 const combined = ages
